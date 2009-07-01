@@ -1,0 +1,15 @@
+cs:
+  label_actions_tab: Akce
+  label_menus_tab: Menu
+  label_projects_tab: Projekty
+  label_global_menu: Hlavní menu
+  label_project_menu: Projektové menu
+  setting_collapse_position: Pozice bočního panelu
+  setting_collapse_showprojectstab: Zobrazení záložky s projekty
+  setting_collapse_showmenustab: Zobrazení záložky s menu
+  setting_collapse_showprojectmenuinmenustab: Zobrazení projektového menu v záložce Menu
+  setting_collapse_hideprojectselector: Skrytí okna s výběrem projektů
+  label_collapse_left: Vlevo
+  label_collapse_right: Vpravo
+  label_spenttime_details: Strávený čas - detaily
+  label_spenttime_report: Strávený čas - report

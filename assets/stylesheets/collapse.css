@@ -1,0 +1,786 @@
+/******************** GENERIC ********************/
+
+/*****
+* Redmine Core CSS-Overloads for Collapse
+*****/
+
+/***** Overloading Redmine Core layout-selectors *****/
+#main {
+    background-color: inherit; /* not in IE7 */
+    padding: 2px 0px 0px 14px;
+}
+html>body #content {
+    height: auto;
+    min-height: 600px;
+    overflow: auto;
+}
+
+/***** Extending modified Redmine Core layout-selectors *****/
+#header.withoutmainmenu {
+    height: 3em;
+}
+
+/******************** DEFAULT THEME ********************/
+
+/*****
+* CSS for Collapse (Left)
+*****/
+
+/***** The box wherein the sidebar resides *****/
+#main #leftmenu-default #leftmenu {
+    float: left;
+    min-height: 600px;
+    padding: 0;
+    position: relative;
+    margin-right: 15px;
+}
+
+/***** The seperator between the box wherein the sidebar resides and the content *****/
+#main #leftmenu-default #leftmenu #leftmenu-border {
+    position: absolute;
+    right: -5px;
+    top: 2.95em;
+    height: 95%;
+    width: 5px;
+    background-image: url(../images/border_collapse.gif);
+    background-repeat: no-repeat;
+    background-position: 0 90px;
+    background-color: #CCCCCC;
+    cursor: pointer;
+}
+
+/***** The actual sidebar wherein tabs reside *****/
+#main #leftmenu-default #leftmenu #leftmenu-contents {
+    margin-bottom: 5em;
+    position: relative;
+    width: 210px;
+}
+
+/*****
+* CSS for Left Collapse Tabs
+*****/
+
+/***** The global tab layout *****/
+#leftmenu-default #leftmenu .collapse_tabs {
+    height: 2.95em;
+    border-bottom: 1px solid #BBBBBB;
+    position: relative;
+}
+#leftmenu-default #leftmenu .collapse_tab-content { margin-top: 1.2em; }
+
+#leftmenu-default #leftmenu .collapse_tabs ul {
+    margin: 0;
+    position: absolute;
+    bottom: -2px;
+    padding-left: 6px;
+}
+#leftmenu-default #leftmenu .collapse_tabs>ul { bottom: -1px; } /* others */
+#leftmenu-default #leftmenu .collapse_tabs ul li {
+    float: left;
+    list-style-type: none;
+    margin-right: 4px;
+    background: #FFFFFF;
+}
+#leftmenu-default #leftmenu .collapse_tabs ul li a{
+    display: block;
+    font-size: 0.9em;
+    text-decoration: none;
+    line-height: 1.3em;
+    padding: 4px 5px 4px 5px;
+    border: 1px solid #CCCCCC;
+    border-bottom: 1px solid #BBBBBB;
+    background-color: #EEEEEE;
+    color: #777777;
+    font-weight: bold;
+}
+#leftmenu-default #leftmenu .collapse_tabs ul li a:hover {
+    background-color: #FFFFDD;
+    text-decoration: none;
+}
+#leftmenu-default #leftmenu .collapse_tabs ul li a.selected {
+    background-color: #FFFFFF;
+    border: 1px solid #BBBBBB;
+    border-bottom: 1px solid #FFFFFF;
+}
+#leftmenu-default #leftmenu .collapse_tabs ul li a.selected:hover {
+    background-color: #FFFFFF;
+}
+
+/***** The actions tab *****/
+#main #leftmenu-default #leftmenu #collapse_tab-content-actions-tab h3 {
+    margin-top: 15px;
+}
+
+/***** The menus tab *****/
+#main #leftmenu-default #leftmenu #collapse_tab-content-menus-tab  #main-menu {
+    margin-right: 0px;
+    position: static;
+}
+#main #leftmenu-default #leftmenu #collapse_tab-content-menus-tab  #main-menu ul li {
+    float: none;
+    list-style-type: none;
+}
+
+#main #leftmenu-default #leftmenu #collapse_tab-content-menus-tab  #main-menu li a {
+    display: block;
+    color: #2A5685;
+    text-decoration: none;
+    padding: 4px 10px 4px 0px;
+    font-weight: normal;
+}
+#main #leftmenu-default #leftmenu #collapse_tab-content-menus-tab  #main-menu li a:hover {
+    background: #FFFFFF;
+    color: #C61A1A;
+}
+#main #leftmenu-default #leftmenu #collapse_tab-content-menus-tab  #main-menu li a.selected,
+#main #leftmenu-default #leftmenu #collapse_tab-content-menus-tab  #main-menu li a.selected:hover {
+    background: #FFFFFF;
+    color: #555555;
+}
+#main #leftmenu-default #leftmenu #collapse_tab-content-menus-tab  #main-menu li a.alt-selected,
+#main #leftmenu-default #leftmenu #collapse_tab-content-menus-tab  #main-menu li a.alt-selected:hover {
+    background: #FFFFFF;
+    color: #555555;
+}
+
+/***** The projects tab *****/
+#main #leftmenu-default #leftmenu #collapse_tab-content-projects-tab div#projects-tree {
+    margin-left: -25px;
+}
+#main #leftmenu-default #leftmenu #collapse_tab-content-projects-tab ul ul {
+    margin-bottom: 4px;
+}
+#main #leftmenu-default #leftmenu #collapse_tab-content-projects-tab li a {
+    display: block;
+    color: #2A5685;
+    text-decoration: none;
+    padding: 4px 10px 4px 0px;
+    font-weight: normal;
+}
+#main #leftmenu-default #leftmenu #collapse_tab-content-projects-tab li a:hover {
+    background: #FFFFFF;
+    color: #C61A1A;
+}
+#main #leftmenu-default #leftmenu #collapse_tab-content-projects-tab li a.selected,
+#main #leftmenu-default #leftmenu #collapse_tab-content-projects-tab li a.selected:hover {
+    background: #FFFFFF;
+    color: #555555;
+}
+
+/******************** ALTERNATE THEME ********************/
+
+/*****
+* CSS for Collapse (Left)
+*****/
+
+/***** The box wherein the sidebar resides *****/
+#main #leftmenu-alternate #leftmenu {
+    float: left;
+    min-height: 600px;
+    padding: 0;
+    position: relative;
+    margin-right: 15px;
+}
+
+/***** The seperator between the box wherein the sidebar resides and the content *****/
+#main #leftmenu-alternate #leftmenu #leftmenu-border {
+    position: absolute;
+    right: -5px;
+    top: 1.93em;
+    height: 95%;
+    width: 5px;
+    background-image: url(../images/border_collapse.gif);
+    background-repeat: no-repeat;
+    background-position: 0 90px;
+    background-color: #CCCCCC;
+    cursor: pointer;
+}
+
+/***** The actual sidebar wherein tabs reside *****/
+#main #leftmenu-alternate #leftmenu #leftmenu-contents {
+    margin-bottom: 5em;
+    position: relative;
+    width: 210px;
+}
+
+/*****
+* CSS for Left Collapse Tabs
+*****/
+
+/***** The global tab layout *****/
+#leftmenu-alternate #leftmenu .collapse_tabs {
+    height: 1.92em;
+    border-bottom: 1px solid #BBBBBB;
+    position: relative;
+}
+#leftmenu-alternate #leftmenu .collapse_tab-content { margin-top: 1.2em; }
+
+#leftmenu-alternate #leftmenu .collapse_tabs ul {
+    margin: 0;
+    position: absolute;
+    bottom: -2px;
+    padding-left: 6px;
+}
+#leftmenu-alternate #leftmenu .collapse_tabs>ul { bottom: -1px; } /* others */
+#leftmenu-alternate #leftmenu .collapse_tabs ul li {
+    float: left;
+    list-style-type: none;
+    margin-right: 4px;
+    background: #FFFFFF;
+}
+#leftmenu-alternate #leftmenu .collapse_tabs ul li a{
+    display: block;
+    font-size: 0.9em;
+    text-decoration: none;
+    line-height: 1.3em;
+    padding: 4px 5px 4px 5px;
+    border: 1px solid #CCCCCC;
+    border-bottom: 1px solid #BBBBBB;
+    background-color: #FFFFFF;
+    color: #777777;
+    font-weight: bold;
+}
+#leftmenu-alternate #leftmenu .collapse_tabs ul li a:hover {
+    background-color: #FFFFDD;
+    text-decoration: none;
+}
+#leftmenu-alternate #leftmenu .collapse_tabs ul li a.selected {
+    background-color: #EEEEEE;
+    border: 1px solid #BBBBBB;
+    border-bottom: 1px solid #EEEEEE;
+}
+#leftmenu-alternate #leftmenu .collapse_tabs ul li a.selected:hover {
+    background-color: #EEEEEE;
+}
+
+/***** The actions tab *****/
+#main #leftmenu-alternate #leftmenu #collapse_tab-content-actions-tab h3 {
+    margin-top: 15px;
+}
+
+/***** The menus tab *****/
+#main #leftmenu-alternate #leftmenu #collapse_tab-content-menus-tab  #main-menu {
+    margin-right: 0px;
+    position: static;
+}
+#main #leftmenu-alternate #leftmenu #collapse_tab-content-menus-tab  #main-menu ul li {
+    float: none;
+    list-style-type: none;
+}
+
+#main #leftmenu-alternate #leftmenu #collapse_tab-content-menus-tab  #main-menu li a {
+    display: block;
+    color: #2A5685;
+    background-color: #EEEEEE;
+    text-decoration: none;
+    padding: 4px 10px 4px 0px;
+    font-weight: normal;
+}
+#main #leftmenu-alternate #leftmenu #collapse_tab-content-menus-tab  #main-menu li a:hover {
+    background: #EEEEEE;
+    color: #C61A1A;
+}
+#main #leftmenu-alternate #leftmenu #collapse_tab-content-menus-tab  #main-menu li a.selected,
+#main #leftmenu-alternate #leftmenu #collapse_tab-content-menus-tab  #main-menu li a.selected:hover {
+    background: #EEEEEE;
+    color: #555555;
+}
+#main #leftmenu-alternate #leftmenu #collapse_tab-content-menus-tab  #main-menu li a.alt-selected,
+#main #leftmenu-alternate #leftmenu #collapse_tab-content-menus-tab  #main-menu li a.alt-selected:hover {
+    background: #EEEEEE;
+    color: #555555;
+}
+
+/***** The projects tab *****/
+#main #leftmenu-alternate #leftmenu #collapse_tab-content-projects-tab div#projects-tree {
+    margin-left: -25px;
+}
+#main #leftmenu-alternate #leftmenu #collapse_tab-content-projects-tab ul ul {
+    margin-bottom: 4px;
+}
+#main #leftmenu-alternate #leftmenu #collapse_tab-content-projects-tab li a {
+    display: block;
+    color: #2A5685;
+    text-decoration: none;
+    padding: 4px 10px 4px 0px;
+    font-weight: normal;
+}
+#main #leftmenu-alternate #leftmenu #collapse_tab-content-projects-tab li a:hover {
+    background: #EEEEEE;
+    color: #C61A1A;
+}
+#main #leftmenu-alternate #leftmenu #collapse_tab-content-projects-tab li a.selected,
+#main #leftmenu-alternate #leftmenu #collapse_tab-content-projects-tab li a.selected:hover {
+    background: #EEEEEE;
+    color: #555555;
+}
+
+/******************** CLASSIC THEME ********************/
+
+/*****
+* CSS for Collapse (Left)
+*****/
+
+/***** The box wherein the sidebar resides *****/
+#main #leftmenu-classic #leftmenu {
+    float: left;
+    min-height: 600px;
+    padding: 0;
+    position: relative;
+    margin-right: 15px;
+}
+
+/***** The seperator between the box wherein the sidebar resides and the content *****/
+#main #leftmenu-classic #leftmenu #leftmenu-border {
+    position: absolute;
+    right: -5px;
+    top: 2.94em;
+    height: 95%;
+    width: 5px;
+    background-image: url(../images/border_collapse.gif);
+    background-repeat: no-repeat;
+    background-position: 0 90px;
+    background-color: #CCCCCC;
+    cursor: pointer;
+}
+
+/***** The actual sidebar wherein tabs reside *****/
+#main #leftmenu-classic #leftmenu #leftmenu-contents {
+    margin-bottom: 5em;
+    position: relative;
+    width: 210px;
+}
+
+/*****
+* CSS for Left Collapse Tabs
+*****/
+
+/***** The global tab layout *****/
+#leftmenu-classic #leftmenu .collapse_tabs {
+    height: 2.95em;
+    border-bottom: 1px solid #BBBBBB;
+    position: relative;
+}
+#leftmenu-classic #leftmenu .collapse_tab-content { margin-top: 1.2em; }
+
+#leftmenu-classic #leftmenu .collapse_tabs ul {
+    margin: 0;
+    position: absolute;
+    bottom: -2px;
+    padding-left: 6px;
+}
+#leftmenu-classic #leftmenu .collapse_tabs>ul { bottom: -1px; } /* others */
+#leftmenu-classic #leftmenu .collapse_tabs ul li {
+    float: left;
+    list-style-type: none;
+    margin-right: 4px;
+    background: #FFFFFF;
+}
+#leftmenu-classic #leftmenu .collapse_tabs ul li a{
+    display: block;
+    font-size: 0.9em;
+    text-decoration: none;
+    line-height: 1.3em;
+    padding: 4px 5px 4px 5px;
+    border: 1px solid #CCCCCC;
+    border-bottom: 1px solid #BBBBBB;
+    background-color: #EEEEEE;
+    color: #777777;
+    font-weight: bold;
+}
+#leftmenu-classic #leftmenu .collapse_tabs ul li a:hover {
+    background-color: #FFFFDD;
+    text-decoration: none;
+}
+#leftmenu-classic #leftmenu .collapse_tabs ul li a.selected {
+    background-color: #FFFFFF;
+    border: 1px solid #BBBBBB;
+    border-bottom: 1px solid #FFFFFF;
+}
+#leftmenu-classic #leftmenu .collapse_tabs ul li a.selected:hover {
+    background-color: #FFFFFF;
+}
+
+/***** The actions tab *****/
+#main #leftmenu-classic #leftmenu #collapse_tab-content-actions-tab h3 {
+    margin-top: 15px;
+}
+
+/***** The menus tab *****/
+#main #leftmenu-classic #leftmenu #collapse_tab-content-menus-tab  #main-menu {
+    margin-right: 0px;
+    position: static;
+}
+#main #leftmenu-classic #leftmenu #collapse_tab-content-menus-tab  #main-menu ul li {
+    float: none;
+    list-style-type: none;
+}
+
+#main #leftmenu-classic #leftmenu #collapse_tab-content-menus-tab  #main-menu li a {
+    display: block;
+    color: #467AA7;
+    background-color: #FFFFFF;
+    text-decoration: none;
+    padding: 4px 10px 4px 0px;
+    font-weight: bold;
+    font-size: 100%;
+}
+#main #leftmenu-classic #leftmenu #collapse_tab-content-menus-tab  #main-menu li a:hover {
+    background: #FFFFFF;
+    color: #C61A1A;
+}
+#main #leftmenu-classic #leftmenu #collapse_tab-content-menus-tab  #main-menu li a.selected,
+#main #leftmenu-classic #leftmenu #collapse_tab-content-menus-tab  #main-menu li a.selected:hover {
+    background: #FFFFFF;
+    color: #555555;
+}
+#main #leftmenu-classic #leftmenu #collapse_tab-content-menus-tab  #main-menu li a.alt-selected,
+#main #leftmenu-classic #leftmenu #collapse_tab-content-menus-tab  #main-menu li a.alt-selected:hover {
+    background: #FFFFFF;
+    color: #555555;
+}
+
+/***** The projects tab *****/
+#main #leftmenu-classic #leftmenu #collapse_tab-content-projects-tab div#projects-tree {
+    margin-left: -25px;
+}
+#main #leftmenu-classic #leftmenu #collapse_tab-content-projects-tab ul ul {
+    margin-bottom: 4px;
+}
+#main #leftmenu-classic #leftmenu #collapse_tab-content-projects-tab li a {
+    display: block;
+    color: #467AA7;
+    text-decoration: none;
+    padding: 4px 10px 4px 0px;
+    font-weight: bold;
+}
+#main #leftmenu-classic #leftmenu #collapse_tab-content-projects-tab li a:hover {
+    background: #FFFFFF;
+    color: #C61A1A;
+}
+#main #leftmenu-classic #leftmenu #collapse_tab-content-projects-tab li a.selected,
+#main #leftmenu-classic #leftmenu #collapse_tab-content-projects-tab li a.selected:hover {
+    background: #FFFFFF;
+    color: #555555;
+}
+
+/******************** BASECAMP THEME ********************/
+
+/*****
+* CSS for Collapse (Left)
+*****/
+
+/***** The box wherein the sidebar resides *****/
+#main #leftmenu-basecamp #leftmenu {
+    float: left;
+    min-height: 600px;
+    padding: 0;
+    position: relative;
+    margin-left: -14px;
+    margin-right: 15px;
+}
+
+/***** The seperator between the box wherein the sidebar resides and the content *****/
+#main #leftmenu-basecamp #leftmenu #leftmenu-border {
+    position: absolute;
+    right: -5px;
+    top: 1.93em;
+    height: 95%;
+    width: 5px;
+    background-image: url(../images/border_collapse.gif);
+    background-repeat: no-repeat;
+    background-position: 0 90px;
+    background-color: #CCCCCC;
+    cursor: pointer;
+}
+
+/***** The actual sidebar wherein tabs reside *****/
+#main #leftmenu-basecamp #leftmenu #leftmenu-contents {
+    margin-bottom: 5em;
+    position: relative;
+    width: 210px;
+}
+
+/*****
+* CSS for Left Collapse Tabs
+*****/
+
+/***** The global tab layout *****/
+#leftmenu-basecamp #leftmenu .collapse_tabs {
+    height: 1.95em;
+    border-bottom: 1px solid #BBBBBB;
+    position: relative;
+}
+#leftmenu-basecamp #leftmenu .collapse_tab-content { margin-top: 1.2em; }
+
+#leftmenu-basecamp #leftmenu .collapse_tabs ul {
+    margin: 0;
+    position: absolute;
+    bottom: -2px;
+    padding-left: 6px;
+}
+#leftmenu-basecamp #leftmenu .collapse_tabs>ul { bottom: -1px; } /* others */
+#leftmenu-basecamp #leftmenu .collapse_tabs ul li {
+    float: left;
+    list-style-type: none;
+    margin-right: 4px;
+    background: #FFFFFF;
+}
+#leftmenu-basecamp #leftmenu .collapse_tabs ul li a{
+    display: block;
+    font-size: 0.9em;
+    text-decoration: none;
+    line-height: 1.3em;
+    padding: 4px 5px 4px 5px;
+    border: 1px solid #CCCCCC;
+    border-bottom: 1px solid #BBBBBB;
+    background-color: #FFFFFF;
+    color: #777777;
+    font-weight: bold;
+}
+#leftmenu-basecamp #leftmenu .collapse_tabs ul li a:hover {
+    background-color: #FFFFDD;
+    text-decoration: none;
+}
+#leftmenu-basecamp #leftmenu .collapse_tabs ul li a.selected {
+    background-color: #EEEEEE;
+    border: 1px solid #BBBBBB;
+    border-bottom: 1px solid #EEEEEE;
+}
+#leftmenu-basecamp #leftmenu .collapse_tabs ul li a.selected:hover {
+    background-color: #EEEEEE;
+}
+
+/***** The actions tab *****/
+#main #leftmenu-basecamp #leftmenu #collapse_tab-content-actions-tab h3 {
+    margin-top: 15px;
+}
+
+/***** The menus tab *****/
+#main #leftmenu-basecamp #leftmenu #collapse_tab-content-menus-tab  #main-menu {
+    margin-left: 0px;
+    margin-right: 0px;
+    position: static;
+}
+#main #leftmenu-basecamp #leftmenu #collapse_tab-content-menus-tab  #main-menu ul li {
+    float: none;
+    list-style-type: none;
+}
+
+#main #leftmenu-basecamp #leftmenu #collapse_tab-content-menus-tab  #main-menu li a {
+    display: block;
+    background-color: #EEEEEE;
+    color: #2A5685;
+    text-decoration: none;
+    padding: 4px 10px 4px 0px;
+    font-weight: normal;
+}
+#main #leftmenu-basecamp #leftmenu #collapse_tab-content-menus-tab  #main-menu li a:hover {
+    background: #EEEEEE;
+    color: #C61A1A;
+}
+#main #leftmenu-basecamp #leftmenu #collapse_tab-content-menus-tab  #main-menu li a.selected,
+#main #leftmenu-basecamp #leftmenu #collapse_tab-content-menus-tab  #main-menu li a.selected:hover {
+    background: #EEEEEE;
+    color: #555555;
+}
+#main #leftmenu-basecamp #leftmenu #collapse_tab-content-menus-tab  #main-menu li a.alt-selected,
+#main #leftmenu-basecamp #leftmenu #collapse_tab-content-menus-tab  #main-menu li a.alt-selected:hover {
+    background: #EEEEEE;
+    color: #555555;
+}
+
+/***** The projects tab *****/
+#main #leftmenu-basecamp #leftmenu #collapse_tab-content-projects-tab div#projects-tree {
+    margin-left: -25px;
+}
+#main #leftmenu-basecamp #leftmenu #collapse_tab-content-projects-tab ul ul {
+    margin-bottom: 4px;
+}
+#main #leftmenu-basecamp #leftmenu #collapse_tab-content-projects-tab li a {
+    display: block;
+    color: #2A5685;
+    text-decoration: none;
+    padding: 4px 10px 4px 0px;
+    font-weight: normal;
+}
+#main #leftmenu-basecamp #leftmenu #collapse_tab-content-projects-tab li a:hover {
+    background: #EEEEEE;
+    color: #C61A1A;
+}
+#main #leftmenu-basecamp #leftmenu #collapse_tab-content-projects-tab li a.selected,
+#main #leftmenu-basecamp #leftmenu #collapse_tab-content-projects-tab li a.selected:hover {
+    background: #EEEEEE;
+    color: #555555;
+}
+
+/******************** SQUEEJEE THEME ********************/
+
+/*****
+* CSS for Collapse (Left)
+*****/
+
+/***** The box wherein the sidebar resides *****/
+#main #leftmenu-squeejee #leftmenu {
+    float: left;
+    min-height: 600px;
+    padding: 0;
+    position: relative;
+    margin-right: 15px;
+}
+
+/***** The seperator between the box wherein the sidebar resides and the content *****/
+#main #leftmenu-squeejee #leftmenu #leftmenu-border {
+    position: absolute;
+    right: -5px;
+    top: 2.90em;
+    height: 95%;
+    width: 5px;
+    background-image: url(../images/border_collapse.gif);
+    background-repeat: no-repeat;
+    background-position: 0 90px;
+    background-color: #CCCCCC;
+    cursor: pointer;
+}
+
+/***** The actual sidebar wherein tabs reside *****/
+#main #leftmenu-squeejee #leftmenu #leftmenu-contents {
+    margin-bottom: 5em;
+    position: relative;
+    width: 210px;
+}
+
+/*****
+* CSS for Left Collapse Tabs
+*****/
+
+/***** The global tab layout *****/
+#leftmenu-squeejee #leftmenu .collapse_tabs {
+    height: 2.90em;
+    border-bottom: 1px solid #BBBBBB;
+    position: relative;
+}
+#leftmenu-squeejee #leftmenu .collapse_tab-content { margin-top: 1.2em; }
+
+#leftmenu-squeejee #leftmenu .collapse_tabs ul {
+    margin: 0;
+    position: absolute;
+    bottom: -2px;
+    padding-left: 6px;
+}
+#leftmenu-squeejee #leftmenu .collapse_tabs>ul { bottom: -1px; } /* others */
+#leftmenu-squeejee #leftmenu .collapse_tabs ul li {
+    float: left;
+    list-style-type: none;
+    margin-right: 4px;
+    background: #FFFFFF;
+}
+#leftmenu-squeejee #leftmenu .collapse_tabs ul li a{
+    display: block;
+    font-size: 0.9em;
+    text-decoration: none;
+    line-height: 1.3em;
+    padding: 4px 5px 4px 5px;
+    border: 1px solid #CCCCCC;
+    border-bottom: 1px solid #BBBBBB;
+    background-color: #E0E0E0;
+    color: #777777;
+    font-weight: bold;
+}
+#leftmenu-squeejee #leftmenu .collapse_tabs ul li a:hover {
+    background-color: #FFFFDD;
+    text-decoration: none;
+}
+#leftmenu-squeejee #leftmenu .collapse_tabs ul li a.selected {
+    background-color: #333333;
+    color: #8C8C8C;
+    border: 1px solid #BBBBBB;
+    border-bottom: 1px solid #333333;
+}
+#leftmenu-squeejee #leftmenu .collapse_tabs ul li a.selected:hover {
+    background-color: #333333;
+}
+
+/***** The global tab design *****/
+#main #leftmenu-squeejee #leftmenu h1,
+#main #leftmenu-squeejee #leftmenu h2,
+#main #leftmenu-squeejee #leftmenu h3,
+#main #leftmenu-squeejee #leftmenu h4,
+#main #leftmenu-squeejee #leftmenu h5 {
+    color: #EFEFEF;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.8);
+}
+
+#main #leftmenu-squeejee #leftmenu {
+    color: #CCCCCC;
+}
+
+/***** The actions tab *****/
+#main #leftmenu-squeejee #leftmenu #collapse_tab-content-actions-tab a {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+#main #leftmenu-squeejee #leftmenu #collapse_tab-content-actions-tab h3 {
+    margin-top: 15px;
+}
+
+/***** The menus tab *****/
+#main #leftmenu-squeejee #leftmenu #collapse_tab-content-menus-tab  #main-menu {
+    margin-right: 0px;
+    position: static;
+}
+#main #leftmenu-squeejee #leftmenu #collapse_tab-content-menus-tab  #main-menu ul li {
+    float: none;
+    list-style-type: none;
+}
+
+#main #leftmenu-squeejee #leftmenu #collapse_tab-content-menus-tab  #main-menu li a {
+    display: block;
+    color: #8C8C8C;
+    background-color: #333333;
+    text-decoration: none;
+    font-weight: bold;
+}
+#main #leftmenu-squeejee #leftmenu #collapse_tab-content-menus-tab  #main-menu li a:hover {
+    background-color: #333333;
+    color: #B3B3B3;
+}
+#main #leftmenu-squeejee #leftmenu #collapse_tab-content-menus-tab  #main-menu li a.selected,
+#main #leftmenu-squeejee #leftmenu #collapse_tab-content-menus-tab  #main-menu li a.selected:hover {
+    background-color: #333333;
+    color: #BFBFBF;
+}
+#main #leftmenu-squeejee #leftmenu #collapse_tab-content-menus-tab  #main-menu li a.alt-selected,
+#main #leftmenu-squeejee #leftmenu #collapse_tab-content-menus-tab  #main-menu li a.alt-selected:hover {
+    background: #333333;
+    color: #BFBFBF;
+}
+
+/***** The projects tab *****/
+#main #leftmenu-squeejee #leftmenu #collapse_tab-content-projects-tab div#projects-tree {
+    margin-left: -25px;
+}
+#main #leftmenu-squeejee #leftmenu #collapse_tab-content-projects-tab ul li {
+    border: solid 1px #333333;
+    border-width: 1px 1px 0px 0px;
+}
+#main #leftmenu-squeejee #leftmenu #collapse_tab-content-projects-tab ul ul {
+    margin-bottom: 4px;
+}
+#main #leftmenu-squeejee #leftmenu #collapse_tab-content-projects-tab li a {
+    display: block;
+    color: #8C8C8C;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    padding: 4px 10px 4px 0px;
+    font-weight: bold;
+}
+#main #leftmenu-squeejee #leftmenu #collapse_tab-content-projects-tab li:hover {
+    border-color: #555555;
+}
+#main #leftmenu-squeejee #leftmenu #collapse_tab-content-projects-tab li a:hover {
+    color: #B3B3B3;
+}
+#main #leftmenu-squeejee #leftmenu #collapse_tab-content-projects-tab li a.selected,
+#main #leftmenu-squeejee #leftmenu #collapse_tab-content-projects-tab li a.selected:hover {
+    color: #BFBFBF;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title><%=h html_title %></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="<%= Redmine::Info.app_name %>" />
+<meta name="keywords" content="issue,bug,tracker" />
+<%= stylesheet_link_tag 'application', :media => 'all' %>
+<%= stylesheet_link_tag 'collapse.css', :plugin => "redmine_collapse", :media => 'all' %>
+<%= javascript_include_tag :defaults %>
+<%= javascript_include_tag 'collapse.js', :plugin => "redmine_collapse" %>
+<%= heads_for_wiki_formatter %>
+<!--[if IE]>
+    <style type="text/css">
+      * html body{ width: expression( document.documentElement.clientWidth < 900 ? '900px' : '100%' ); }
+      body {behavior: url(<%= stylesheet_path "csshover.htc" %>);}
+    </style>
+<![endif]-->
+<%= call_hook :view_layouts_base_html_head %>
+<!-- page specific tags -->
+<%= yield :header_tags -%>
+</head>
+<body>
+<div id="wrapper">
+    <div id="top-menu">
+        <div id="account">
+            <%= render_menu :account_menu -%>
+        </div>
+        <%= content_tag('div', "#{l(:label_logged_as)} #{link_to_user(User.current, :format => :username)}", :id => 'loggedas') if User.current.logged? %>
+        <%= render_menu :top_menu -%>
+    </div>
+    
+    <% if Setting.plugin_redmine_collapse['show_menus_tab'] == '1' && Setting.plugin_redmine_collapse['show_projectmenu_in_menustab'] == '1' %>
+        <div id="header" class="withoutmainmenu">
+    <% else %>
+        <div id="header">
+    <% end %>
+        <div id="quick-search">
+            <% form_tag({:controller => 'search', :action => 'index', :id => @project}, :method => :get ) do %>
+                <%= link_to l(:label_search), {:controller => 'search', :action => 'index', :id => @project}, :accesskey => accesskey(:search) %>:
+                <%= text_field_tag 'q', @question, :size => 20, :class => 'small', :accesskey => accesskey(:quick_search) %>
+            <% end %>
+            <% if render_project_hierarchy_implemented %>
+                <%= render_project_jump_box if (Setting.plugin_redmine_collapse['hide_project_selector'] == '0') %>
+            <% else %>
+                <%= render :partial => 'layouts/project_selector' if User.current.memberships.any? && (Setting.plugin_redmine_collapse['hide_project_selector'] == '0') %>
+            <% end %>
+        </div>
+        
+        <% if page_header_title_implemented %>
+            <h1><%= page_header_title %></h1>
+        <% else %>
+            <h1><%= h(@project && !@project.new_record? ? @project.name : Setting.app_title) %></h1>
+        <% end %>
+        
+        <% unless Setting.plugin_redmine_collapse['show_menus_tab'] == '1' && Setting.plugin_redmine_collapse['show_projectmenu_in_menustab'] == '1' %>
+            <div id="main-menu">
+                <%= render_main_menu(@project) %>
+            </div>
+        <% end %>
+    </div>
+    
+    <%= tag('div', {:id => 'main', :class => 'nosidebar'}, true) %>
+      <div id="leftmenu-<%= current_redmine_theme %>">
+        <div id="leftmenu">
+            <div id="leftmenu-contents">
+                <div style="width:210px">
+                    <% collapse_tabs = left_menu_tabs %>
+                    <% collapse_selected_tab = params[:tab] ? params[:tab].to_s : collapse_tabs.first[:name] %>
+                    <% collapse_selected_tab = left_menu_selected_tab %>
+                    
+                    <div class="collapse_tabs">
+                        <ul>
+                            <% collapse_tabs.each do |collapse_tab| -%>
+                                <li><%= link_to l(collapse_tab[:label]), { :tab => collapse_tab[:name] },
+                                                                         :id => "collapse_tab-#{collapse_tab[:name]}",
+                                                                         :class => (collapse_tab[:name] != collapse_selected_tab ? nil : 'selected'),
+                                                                         :onclick => "showLeftTab('#{collapse_tab[:name]}'); this.blur(); return false;" %></li>
+                            <% end -%>
+                        </ul>
+                    </div>
+                    
+                    <% collapse_tabs.each do |collapse_tab| -%>
+                        <%= content_tag('div', render(:partial => collapse_tab[:partial]),
+                                               :id => "collapse_tab-content-#{collapse_tab[:name]}",
+                                               :style => (collapse_tab[:name] != collapse_selected_tab ? 'display:none' : nil),
+                                               :class => 'collapse_tab-content') %>
+                    <% end -%>
+                </div>
+            </div>
+            
+            <div id="leftmenu-border" onclick="toggle_leftMenu('leftmenu-contents')"></div>
+        </div>
+      </div>
+        
+        <div id="content">
+            <% if render_flash_messages_implemented %>
+                <%= render_flash_messages %>
+            <% else %>
+                <%= content_tag('div', flash[:error], :class => 'flash error') if flash[:error] %>
+                <%= content_tag('div', flash[:notice], :class => 'flash notice') if flash[:notice] %>
+            <% end %>
+            <%= yield %>
+            <%= call_hook :view_layouts_base_content %>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+    
+    <div id="ajax-indicator" style="display:none;"><span><%= l(:label_loading) %></span></div>
+    
+    <div id="footer">
+        Powered by <%= link_to Redmine::Info.app_name, Redmine::Info.url %> &copy; 2006-2009 Jean-Philippe Lang
+    </div>
+</div>
+<%= call_hook :view_layouts_base_body_bottom %>
+</body>
+</html>
