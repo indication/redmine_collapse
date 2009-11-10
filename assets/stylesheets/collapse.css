@@ -20,6 +20,25 @@ html>body #content {
     height: 3em;
 }
 
+/*****
+* CSS for Collapse (printing)
+*****/
+
+
+@media print {
+  html>body #content {
+      height: auto;
+      min-height: 0px;
+      overflow: auto;
+  }
+  #main #leftmenu-default #leftmenu {
+    display: none;
+  }
+  #main #leftmenu-alternate #leftmenu {
+    display: none;
+  }
+}
+
 /******************** DEFAULT THEME ********************/
 
 /*****
